@@ -7,21 +7,18 @@ def main():
     
     # 1. Load Data
     print("Loading Dataset (Fetching top 50)...")
-    # Load 50 cases so we can pick the 50th one
     dialogues = load_meddialog_dataset(n=50) 
     
     if not dialogues:
         print("Error: No data loaded.")
         return
 
-    # Select the 50th case (Index -1 represents the last item in the list of 50)
-    # Since data is sorted Longest -> Shortest, this will be the shortest of the bunch.
-    sample = dialogues[-1] 
+    sample = dialogues[-1] # last case has less words
     
     print(f"\nProcessing Case Index 50 (ID: {sample.get('id', 'unknown')})")
     print(f"Word Count: {sample.get('length', 'N/A')}")
     
-    # 2. Pre-process (PII Scrubbing)
+    # 2. Pre-process (PII Scrubbing) OPTIONAL STEP [the dataset is already pre-anonymized]
     clean_text = scrub_pii(sample['dialogue'])
     
     # 3. Run Agent Pipeline
@@ -36,7 +33,7 @@ def main():
         print("\n" + "="*50)
         print("FINAL SOAP NOTE")
         print("="*50)
-        # Use model_dump() for Pydantic V2
+        
         print(json.dumps(result['soap_note'].model_dump(), indent=2))
         
         print("\n" + "-"*20)

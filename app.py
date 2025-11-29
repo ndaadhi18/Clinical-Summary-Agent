@@ -74,7 +74,6 @@ with col2:
                 )
                 
                 # Calculate scores (Generated vs Original Transcript)
-                # We use the transcript as reference to measure information recall
                 scores = calculate_metrics(generated_text, dialogue_input)
                 
                 m1, m2, m3 = st.columns(3)
