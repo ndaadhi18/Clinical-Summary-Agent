@@ -1,0 +1,27 @@
+
+# API Keys and Secrets
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual Environment
+venv/
+.venv/
+env/
+
+
+# Logs
+llm_api_logs.jsonl
+
+# OS files
+.DS_Store
+
+# unneccesary files
+pyproject.toml
+system-design.png
+techical_report.pdf
+uv.lock
+.python-version
+.vscode/
