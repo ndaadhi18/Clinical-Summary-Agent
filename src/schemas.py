@@ -17,14 +17,14 @@ class SOAPNote(BaseModel):
     assessment: str = Field(description="Diagnosis.")
     plan: List[str] = Field(description="Actionable steps.")
 
-# --- ADD THIS NEW CLASS ---
+
 class NurseReport(BaseModel):
     """
     Combined extraction model to reduce API calls.
     """
     demographics: PatientDemographics
     risk_analysis: ClinicalRisk
-# --------------------------
+
 
 class AgentState(BaseModel):
     dialogue_id: str
