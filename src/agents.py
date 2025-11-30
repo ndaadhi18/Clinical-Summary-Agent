@@ -12,7 +12,7 @@ llm = ChatGoogleGenerativeAI(
     google_api_key=GOOGLE_API_KEY
 )
 
-# --- Agent 1: The Nurse (OPTIMIZED: Single Call) ---
+# --- Agent 1: The Nurse
 def nurse_agent_node(state):
     """
     Role: Extract Demographics AND Clinical Risks in a SINGLE pass.
